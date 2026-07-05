@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile metadata",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "currentDay": {
+          "type": "integer"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "email"]
+    },
+    "DailyLog": {
+      "title": "Daily Log",
+      "description": "Daily tracking record for Kriya, Omega-3, and study habits",
+      "type": "object",
+      "properties": {
+        "dayNumber": {
+          "type": "integer"
+        },
+        "date": {
+          "type": "string"
+        },
+        "wakeUpTime": {
+          "type": "string"
+        },
+        "morningSky": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "omega3Dose1": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "omega3Dose2": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "eveningPractice": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "stillnessSitting": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "deepStudy": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "noMobileHours": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "revision": {
+          "type": "string",
+          "enum": ["done", "missed", "pending"]
+        },
+        "focusLevel": {
+          "type": "integer"
+        },
+        "sleepQuality": {
+          "type": "integer"
+        },
+        "mood": {
+          "type": "integer"
+        },
+        "mockTestScore": {
+          "type": "integer"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": ["dayNumber", "date"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User preferences and tracking settings"
+    },
+    "/users/{userId}/logs/{logId}": {
+      "schema": "DailyLog",
+      "description": "Daily logged habits and details for a given day"
+    }
+  }
+}

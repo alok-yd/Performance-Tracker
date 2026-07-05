@@ -1,0 +1,8 @@
+{
+  "name": "Remix: 90-Day Kriya \u0026 Omega-3 Tracker",
+  "description": "An advanced tracker and roadmap for Sudarshan Kriya (SKY), Omega-3, and study focus optimization based on your daily 90-day plan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
